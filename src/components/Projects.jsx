@@ -22,6 +22,7 @@ const PROJECTS = [
       'Priority handling that fast-tracks urgent cases ahead of the standard queue',
       'Responsive staff-facing interface for real-time queue control',
     ],
+    link: 'https://mediqueue01.netlify.app/html/',
   },
 ]
 
@@ -66,6 +67,19 @@ export default function Projects() {
                 </span>
               ))}
             </div>
+            {p.link && (
+  <div className="mt-5">
+    <a
+      href={p.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 border border-blue text-blue px-4 py-2 text-sm font-mono tracking-wide transition-all duration-200 hover:bg-blue hover:text-white"
+    >
+      View Project
+      <span>↗</span>
+    </a>
+  </div>
+)}
           </article>
         ))}
       </div>
