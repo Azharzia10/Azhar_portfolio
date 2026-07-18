@@ -1,0 +1,10 @@
+Place your resume file in this folder (public/) with this EXACT name:
+
+Azhar_Zia_Resume_ATS (1).pdf
+
+Vite copies everything in /public to the site root untouched at build time,
+so the file will be reachable at:  https://yourdomain.com/Azhar_Zia_Resume_ATS (1).pdf
+
+The download button in src/components/ResumeDownload.jsx already points to
+this exact filename (URL-encoded). No code changes needed — just drop the
+PDF in here and delete this note.
