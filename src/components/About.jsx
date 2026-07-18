@@ -29,7 +29,7 @@ export default function About() {
           </p>
           <p>
             I'm currently seeking a{' '}
-            <span className="text-amber font-semibold">Full-Stack or Python/Flask Developer</span>{' '}
+            <span className="text-amber font-semibold">JAVA Full-Stack Developer</span>{' '}
             role where I can build production-grade systems from the ground up and contribute to 
             impactful projects.
           </p>
