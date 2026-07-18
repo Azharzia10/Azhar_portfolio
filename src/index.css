@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper text-ink font-body antialiased;
+}
+
+::selection {
+  background-color: #e8a33d;
+  color: #0b1f2e;
+}
+
+/* Visible keyboard focus everywhere */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #e8a33d;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --- Blueprint design system utilities --- */
+
+.blueprint-grid {
+  background-image: linear-gradient(rgba(199, 216, 218, 0.6) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(199, 216, 218, 0.6) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.blueprint-grid-dark {
+  background-image: linear-gradient(rgba(63, 120, 138, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(63, 120, 138, 0.35) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Section eyebrow rendered like a drawing annotation: SHEET 02 / SKILLS */
+.dwg-label {
+  @apply font-mono text-xs tracking-[0.25em] uppercase text-blue;
+}
+
+/* Dimension-line heading underline: tick — line — tick, like a CAD dimension */
+.dwg-heading {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.6rem;
+}
+.dwg-heading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #1f5c8b;
+}
+.dwg-heading::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid #1f5c8b;
+  border-bottom: 2px solid #1f5c8b;
+}
+
+/* Corner registration brackets, like a title block or crop marks */
+.reg-corners {
+  position: relative;
+}
+.reg-corners::before,
+.reg-corners::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #1f5c8b;
+  opacity: 0.55;
+}
+.reg-corners::before {
+  top: -1px;
+  left: -1px;
+  border-right: none;
+  border-bottom: none;
+}
+.reg-corners::after {
+  bottom: -1px;
+  right: -1px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Schematic tag chip for skills */
+.tag-chip {
+  @apply font-mono text-xs px-3 py-1.5 border border-blue/40 text-ink bg-white/60 rounded-none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+.tag-chip:hover {
+  @apply border-amber bg-amber/10;
+  transform: translateY(-2px);
+}
+
+/* Stamp-style button (title block "APPROVED" stamp feel) */
+.stamp-btn {
+  @apply font-mono text-sm tracking-wide uppercase inline-flex items-center gap-2 px-5 py-3 border-2 transition-all duration-150;
+}
+
+.timeline-rail::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #1f5c8b 0,
+    #1f5c8b 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
